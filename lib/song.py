@@ -4,7 +4,7 @@ class Song:
     artists = []
     genres = []
     genre_count = {}
-    artists_count = {}
+    artist_count = {}
     
     """ Increments the value of 'count' by one """
     @classmethod
@@ -33,15 +33,15 @@ class Song:
         elif genre in genre_keys:
             cls.genre_count[genre] += 1
     
-    """ Updates 'artists_count' and increments artist key by 1, adds 'artist' if they don't exist """
+    """ Updates 'artist_count' and increments artist key by 1, adds 'artist' if they don't exist """
     @classmethod
     def add_to_artists_count(cls, artist):
         artist_cnt = 0
-        artist_keys = cls.artists_count.keys()
+        artist_keys = cls.artist_count.keys()
         if artist not in artist_keys:
-            cls.artists_count[artist] = artist_cnt + 1
+            cls.artist_count[artist] = artist_cnt + 1
         elif artist in artist_keys:
-            cls.artists_count[artist] += 1
+            cls.artist_count[artist] += 1
                 
     
     def __init__(self, name, artist, genre):
